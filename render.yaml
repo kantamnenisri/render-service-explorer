@@ -1,0 +1,8 @@
+services:
+  - type: web
+    name: render-service-explorer
+    env: docker
+    plan: free
+    envVars:
+      - key: RENDER_API_KEY
+        sync: false # User must provide this in the Render dashboard
