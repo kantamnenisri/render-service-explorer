@@ -114,6 +114,10 @@ class RenderHandler(http.server.SimpleHTTPRequestHandler):
 if __name__ == "__main__":
     os.chdir(BASE_DIR)
     socketserver.TCPServer.allow_reuse_address = True
-    print(f"Starting server on http://localhost:{PORT}")
-    with socketserver.TCPServer(("0.0.0.0", PORT), RenderHandler) as httpd:
+    
+    # Use PORT from environment variable (Render) or default to 8000
+    env_port = int(os.environ.get("PORT", PORT))
+    
+    print(f"Starting server on http://0.0.0.0:{env_port}")
+    with socketserver.TCPServer(("0.0.0.0", env_port), RenderHandler) as httpd:
         httpd.serve_forever()
