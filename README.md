@@ -39,3 +39,9 @@ This app is ready for deployment on Render using the included `render.yaml` and 
 1. Push to GitHub.
 2. Connect to Render.
 3. Add your `RENDER_API_KEY` to the environment variables.
+
+
+## 💡 Inspiration
+This project is a reference implementation exploring concepts related to 
+multi-cloud reliability engineering. The author holds USPTO patent 
+applications in this domain (US 19/325,718 and US 19/344,864).
