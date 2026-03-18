@@ -57,6 +57,13 @@ class RenderHandler(http.server.SimpleHTTPRequestHandler):
                 self.end_headers()
                 self.wfile.write(json.dumps({"error": str(e)}).encode())
             return
+        
+        elif self.path == "/ping":
+            self.send_response(200)
+            self.send_header('Content-type', 'text/plain')
+            self.end_headers()
+            self.wfile.write(b"OK")
+            return
             
         else:
             # For local dev, manually serve files from static folder
